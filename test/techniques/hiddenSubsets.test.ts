@@ -3,16 +3,8 @@ import { apply as hiddenSubsets } from '../../src/solver/techniques/hiddenSubset
 import { computeCandidates, parsePuzzle } from '../../src/grid.ts'
 
 Deno.test('hiddenSubsets finds a hidden pair or triple', () => {
-  // Standard hidden pair test puzzle (from sudokuwiki.org-style examples).
-  const puzzle = '.........' +
-    '9.46.7...' +
-    '.768.41..' +
-    '3.97.1.8.' +
-    '7.8...3.1' +
-    '.513.6.7.' +
-    '..75.69..' +
-    '...8.23.7' +
-    '.........'
+  // SudokuWiki "Hidden Pairs" canonical example.
+  const puzzle = '72...96........83..1.....79.6...3...8.41.6.5..3...8.92.7.....1..86........95...43'
   const state = parsePuzzle(puzzle)
   computeCandidates(state)
   const step = hiddenSubsets(state)

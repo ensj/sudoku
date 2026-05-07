@@ -93,6 +93,18 @@ export function parsePuzzle(puzzle: string): State {
       throw new Error(`invalid character '${ch}' at index ${i}`)
     }
   }
+  // Validate that no row/col/box contains duplicate clues.
+  for (const unit of ALL_UNITS) {
+    const seen = new Uint8Array(10)
+    for (const i of unit) {
+      const d = grid[i]
+      if (d === 0) continue
+      if (seen[d]) {
+        throw new Error(`duplicate digit ${d} in unit (cell index ${i})`)
+      }
+      seen[d] = 1
+    }
+  }
   const candidates = new Uint16Array(81)
   return { grid, candidates }
 }

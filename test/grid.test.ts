@@ -36,6 +36,12 @@ Deno.test('parsePuzzle rejects invalid characters', () => {
   assertThrows(() => parsePuzzle(bad), Error, 'character')
 })
 
+Deno.test('parsePuzzle rejects duplicate clue in a unit', () => {
+  // Two 1s in row 0
+  const bad = '11' + '.'.repeat(79)
+  assertThrows(() => parsePuzzle(bad), Error, 'duplicate')
+})
+
 Deno.test('maskFromDigit / digitsFromMask round-trip', () => {
   for (let d = 1; d <= 9; d++) {
     const m = maskFromDigit(d)
