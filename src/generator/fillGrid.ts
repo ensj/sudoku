@@ -1,5 +1,5 @@
 import { ALL_CANDIDATES, indicesSeenBy, maskFromDigit } from '../grid.ts'
-import { shuffle, type Rng } from './rng.ts'
+import { type Rng, shuffle } from './rng.ts'
 
 /**
  * Returns a fully-filled valid sudoku grid (81 cells, digits 1-9).

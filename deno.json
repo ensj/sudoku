@@ -2,6 +2,7 @@
   "name": "@ensj/sudoku",
   "version": "0.1.0",
   "exports": "./src/index.ts",
+  "exclude": ["npm/"],
   "tasks": {
     "test": "deno test --allow-read",
     "lint": "deno lint",

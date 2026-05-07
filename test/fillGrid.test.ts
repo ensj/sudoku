@@ -1,4 +1,4 @@
-import { assertEquals, assert } from '@std/assert'
+import { assert, assertEquals } from '@std/assert'
 import { fillGrid } from '../src/generator/fillGrid.ts'
 import { mulberry32 } from '../src/generator/rng.ts'
 import { BOX_INDICES, COL_INDICES, ROW_INDICES } from '../src/grid.ts'

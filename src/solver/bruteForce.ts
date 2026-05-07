@@ -29,7 +29,10 @@ function search(state: State, solutions: string[], cap: number): boolean {
     if (state.grid[i] !== 0) continue
     const c = popcount(state.candidates[i])
     if (c === 0) return false
-    if (c < bestCount) { bestCount = c; bestIdx = i }
+    if (c < bestCount) {
+      bestCount = c
+      bestIdx = i
+    }
   }
   if (bestIdx === -1) {
     solutions.push(serializeGrid(state.grid))

@@ -10,7 +10,10 @@ export function apply(state: State): SolveStep | null {
       const cells: number[] = []
       let placed = false
       for (const i of unit) {
-        if (state.grid[i] === d) { placed = true; break }
+        if (state.grid[i] === d) {
+          placed = true
+          break
+        }
         if (state.candidates[i] & m) cells.push(i)
       }
       if (placed) continue
